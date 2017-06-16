@@ -1,0 +1,392 @@
+div#container
+{
+   width: 900px;
+   position: relative;
+   margin: 0 auto 0 auto;
+   text-align: left;
+}
+body
+{
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   text-align: center;
+}
+#Layer1
+{
+   background-color: #FFFFFF;
+   background-image: none;
+   -moz-box-shadow: 2px 2px 15px #000000;
+   -webkit-box-shadow: 2px 2px 15px #000000;
+   box-shadow: 2px 2px 15px #000000;
+}
+#Image1
+{
+   border: 0px #000000 solid;
+   padding: 0px 0px 0px 0px;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+}
+#wb_CssMenu1
+{
+   border: 0px #FFFFFF solid;
+   background-color: transparent;
+}
+#wb_CssMenu1 ul
+{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   display: inline-block;
+}
+#wb_CssMenu1 li
+{
+   float: left;
+   margin: 0;
+   padding: 7px 5px 7px 0px;
+   width: 120px;
+}
+#wb_CssMenu1 a
+{
+   display: block;
+   float: left;
+   color: #333333;
+   border: 0px #CCCCCC solid;
+   background-color: #FFFFFF;
+   background-image: none;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 17px;
+   font-style: normal;
+   text-decoration: none;
+   width: 110px;
+   height: 30px;
+   padding: 0px 5px 0px 5px;
+   vertical-align: middle;
+   line-height: 30px;
+   text-align: center;
+}
+#wb_CssMenu1 li:hover a, #wb_CssMenu1 a:hover
+{
+   color: #FFFFFF;
+   background-color: #A52A2A;
+   background-image: none;
+   border: 0px #2E6DA4 solid;
+}
+#wb_CssMenu1 li.firstmain
+{
+   padding-left: 7px;
+}
+#wb_CssMenu1 li.lastmain
+{
+   padding-right: 7px;
+}
+#wb_CssMenu1 br
+{
+   clear: both;
+   font-size: 1px;
+   height: 0;
+   line-height: 0;
+}
+#Layer3
+{
+   background-color: #C0C0C0;
+   background-image: none;
+   border: 1px #000000 solid;
+   border-radius: 2px;
+}
+#wb_ClipArt1 a img
+{
+   position: absolute;
+   left: 0;
+}
+#wb_ClipArt1 span
+{
+   position: absolute;
+   left: 0;
+}
+#wb_ClipArt1 a .hover
+{
+   visibility: hidden;
+}
+#wb_ClipArt1 a:hover .hover
+{
+   visibility: visible;
+}
+#wb_ClipArt1 a:hover span
+{
+   visibility: hidden;
+}
+#ClipArt1
+{
+   border-width: 0;
+}
+#Layer2
+{
+   background-color: #C0C0C0;
+   background-image: none;
+   border: 1px #000000 solid;
+   border-radius: 2px;
+}
+#wb_ClipArt2 a img
+{
+   position: absolute;
+   left: 0;
+}
+#wb_ClipArt2 span
+{
+   position: absolute;
+   left: 0;
+}
+#wb_ClipArt2 a .hover
+{
+   visibility: hidden;
+}
+#wb_ClipArt2 a:hover .hover
+{
+   visibility: visible;
+}
+#wb_ClipArt2 a:hover span
+{
+   visibility: hidden;
+}
+#ClipArt2
+{
+   border-width: 0;
+}
+#Layer4
+{
+   background-color: #C0C0C0;
+   background-image: none;
+   border: 1px #000000 solid;
+   border-radius: 2px;
+}
+#wb_ClipArt3 a img
+{
+   position: absolute;
+   left: 0;
+}
+#wb_ClipArt3 span
+{
+   position: absolute;
+   left: 0;
+}
+#wb_ClipArt3 a .hover
+{
+   visibility: hidden;
+}
+#wb_ClipArt3 a:hover .hover
+{
+   visibility: visible;
+}
+#wb_ClipArt3 a:hover span
+{
+   visibility: hidden;
+}
+#ClipArt3
+{
+   border-width: 0;
+}
+#wb_Text1 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #000000 solid;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text1 div
+{
+   text-align: left;
+}
+#wb_Text2 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #000000 solid;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text2 div
+{
+   text-align: center;
+}
+#wb_Text3 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #000000 solid;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text3 div
+{
+   text-align: center;
+}
+#wb_Text4 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #000000 solid;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text4 div
+{
+   text-align: center;
+}
+#Layer5
+{
+   background-color: transparent;
+   background-image: url(images/education-background-checks.jpg);
+   background-repeat: repeat;
+   background-position: left top;
+   background-attachment: fixed;
+   background-position: 50% 0;
+   background-size: cover;
+}
+#wb_LayoutGrid1
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px #CCCCCC solid;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+#LayoutGrid1
+{
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   padding: 0px 15px 0px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid1 .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#LayoutGrid1 .col-1
+{
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   font-size: 0px;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#LayoutGrid1 .col-1
+{
+   float: left;
+}
+#LayoutGrid1 .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   width: 100%;
+   text-align: left;
+}
+#LayoutGrid1:before,
+#LayoutGrid1:after,
+#LayoutGrid1 .row:before,
+#LayoutGrid1 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid1:after,
+#LayoutGrid1 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid1 .col-1
+{
+   float: none;
+   width: 100%;
+}
+}
+#wb_Text5 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #000000 solid;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text5 div
+{
+   text-align: center;
+}
+#wb_Text6 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #000000 solid;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text6 div
+{
+   text-align: left;
+}
+#wb_Text7 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #000000 solid;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text7 div
+{
+   text-align: left;
+}
+#wb_Text8 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px #000000 solid;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text8 div
+{
+   text-align: center;
+}
+#PageFooter1
+{
+   background-color: #F5F5F5;
+   background-image: none;
+   -moz-box-shadow: 1px 1px 15px #000000;
+   -webkit-box-shadow: 1px 1px 15px #000000;
+   box-shadow: 1px 1px 15px #000000;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}

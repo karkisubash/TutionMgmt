@@ -1,0 +1,48 @@
+#menu
+{
+background:#7BF1CC;
+height:40px;
+width:1315px;
+margin:-10px 10px 0 10px;
+float:left;
+}
+ 
+#menu ul
+{
+margin:0;
+padding:0;
+}
+
+#menu ul li
+{
+padding:8px 19PX 0 68px ;
+list-style:none;
+float:left;
+color:#00FFFF;
+}
+#menu ul li a
+{
+padding:5px 3PX 0 5px;
+float:left;
+text-decoration:none;
+}
+
+#menu ul li a:hover
+{
+color:#FF0;
+}
+
+#menu ul li a.active
+{
+color:#FF0;
+}
+
+#main_text
+{
+background:#FFFFFF;
+float:left;
+height:684px;
+width:1295px;
+margin:0 10px 0 10px;
+padding:10px;
+}
