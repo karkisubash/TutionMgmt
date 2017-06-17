@@ -33,7 +33,13 @@
 </div>
 
 <div id="wb_Form1" style="position:absolute;left:185px;top:213px;width:529px;height:418px;z-index:9;">
-<form name="LOGIN_FORM" method="post" action="<?php echo base_url('mainControl/login_validation')?>" enctype="text/plain" id="Form1">
+<form name="LOGIN_FORM" method="post" action="<?php echo base_url('mainControl/login_validation')?>">
+USERNAME:<br/>
+<input type="text" name="username" placeholder="Enter your Username"/><br/><br/>
+Password:<br/>
+<input type="password" name="pwd" placeholder="Enter your Username"/><br/></br>
+<input type="submit" name="Login" value="LOGIN" />
+<!-- <form name="LOGIN_FORM" method="post" action="<?php echo base_url('mainControl/login_validation')?>" enctype="text/plain" id="Form1">
 <div id="wb_Text1" style="position:absolute;left:16px;top:0px;width:472px;height:62px;z-index:0;">
 <span style="color:#000000;font-family:Arial;font-size:53px;"><strong>LOGIN</strong></span></div>
 <label for="" id="Label1" style="position:absolute;left:16px;top:101px;width:136px;height:74px;line-height:74px;z-index:1;">USERNAME</label>
@@ -41,7 +47,7 @@
 <input type="text" id="Editbox1" style="position:absolute;left:197px;top:123px;width:298px;height:25px;line-height:25px;z-index:3;" name="username" value="" spellcheck="false" placeholder="Please enter your username">
 <input type="password" id="Editbox2" style="position:absolute;left:197px;top:207px;width:298px;height:25px;line-height:25px;z-index:4;" name="pwd" value="" spellcheck="false" placeholder="Please enter your Password">
 <input type="submit" id="Button1" name="login" value="LOGIN" style="position:absolute;left:185px;top:292px;width:135px;height:42px;z-index:5;">
-</form>
+</form> -->
 <!-- <?php
 	echo validation_errors();
 ?> -->

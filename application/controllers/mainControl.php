@@ -23,66 +23,48 @@ class MainControl extends CI_Controller{
 
 	public function login_validation(){
 
-		// $this->load->library('form_validation');
-		// $this->form_validation->set_rules('uname','Username','required|alpha');
-		// $this->form_validation->set_rules('pword','Password','required');
-		// $this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
-		// if($this->form_validation->run())
-		// {
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('username','Username','required|alpha');
+		$this->form_validation->set_rules('pwd','Password','required');
+		$this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
+		if($this->form_validation->run())
+		{
 			//true
 			$username=$this->input->post('username');
 			$password=$this->input->post('pwd');
-			print_r($username);
-			die();
+			
 			$this->load->model('mainModel');
 
 			$login_id=$this->mainModel->valid_login($username,$password);
-				print_r($login_id);
-				die();
-			
-		if($login_id->num_rows() > 0 )
-		{
-			foreach ($login_id->result() as $row {
-			
-			echo $row->id;
-				 
-			//return true;
-			}
-			
-
-		} 
-		
-			// if($login_id) 
-			// {
-			// 	if($login_id=='1'){
+			If($login_id){
+			if($login_id=='4'){
+					// $this->load->library('session');
+					// $this->session->set_userdata('id',$login_id);
+					// $this->session->set_userdata('username',$username);
 				
-			// 		$this->load->view('adminDashboard');
+					$this->load->view('adminDashboard');
 					
-			// 	}else{
+				}else{
+				$this->load->library('session');
+				$this->session->set_userdata('id', $login_id);
+				$this->session->set_userdata('username', $username);
 				
-			// 	$this->load->library('session');
-
-			// 	$this->session->set_userdata('user_id', $login_id);
-			// 	$this->session->set_userdata('uname', $username);
+				$this->load->view('studentdashboard');
 				
-			// 	$this->load->view('studentdashboard');
-				
-			// 	//++echo 'password match';
+				//++echo 'password match';
 			
-			// }
-			// }else{
-			// 	echo 'login fail';
-			// }
-	// 	}
-	// }
-
+			}
+			}else{
+				$this->load->view(LOGIN);
+			}
+ 	}
+ } 
 	// public function logout()
 	// {
 	// 	$this->session->unset_userdata('username');
 	// 	redirect(base_url().'direct/login');
 
 	// }
-}
 	public function getData(){
 		$id=2;
 		$this->load->model('mainModel');

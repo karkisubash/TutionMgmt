@@ -27,8 +27,14 @@ class MainModel extends CI_Model{
 		$this->db->where('uname', $username);
 		$this->db->where('pword',$password);
 		$query=$this->db->get('tblregister');
-				return $query;
+		//return $query->row()->user_type_id;
 		//SELECT * FROM tblregister WHERE username='$username' AND pword='$password';
+
+		if ($query->num_rows()>=1){
+			return $query->row()->id;
+		}else{
+			return false;
+		}
 
 
 	}
