@@ -23,12 +23,12 @@ class MainControl extends CI_Controller{
 
 	public function login_validation(){
 
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('username','Username','required|alpha');
-		$this->form_validation->set_rules('pwd','Password','required');
-		$this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
-		if($this->form_validation->run())
-		{
+		// $this->load->library('form_validation');
+		// $this->form_validation->set_rules('username','Username','required|alpha');
+		// $this->form_validation->set_rules('pwd','Password','required');
+		// $this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
+		// if($this->form_validation->run())
+		// {
 			//true
 			$username=$this->input->post('username');
 			$password=$this->input->post('pwd');
@@ -38,9 +38,9 @@ class MainControl extends CI_Controller{
 			$login_id=$this->mainModel->valid_login($username,$password);
 			If($login_id){
 			if($login_id=='4'){
-					// $this->load->library('session');
-					// $this->session->set_userdata('id',$login_id);
-					// $this->session->set_userdata('username',$username);
+					$this->load->library('session');
+					$this->session->set_userdata('id',$login_id);
+					$this->session->set_userdata('username',$username);
 				
 					$this->load->view('adminDashboard');
 					
@@ -51,13 +51,17 @@ class MainControl extends CI_Controller{
 				
 				$this->load->view('studentdashboard');
 				
-				//++echo 'password match';
-			
+				//++echo 'password match'
 			}
 			}else{
-				$this->load->view(LOGIN);
-			}
- 	}
+ 				echo ("Username or Password Error");
+ 			}
+			// }else{
+
+			// 	//$this->load->view('LOGIN');
+			// 	echo ('somethng is wrong');
+			
+ 	
  } 
 	// public function logout()
 	// {
