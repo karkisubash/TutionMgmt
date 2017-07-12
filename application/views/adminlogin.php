@@ -2,8 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>LOGIN</title>
-<meta name="generator" content="WYSIWYG Web Builder 12 - http://www.wysiwygwebbuilder.com">
+<title>Admin LOGIN</title>
 <link href="<?php echo base_url();?>assets/TIMS.css" media="screen" rel="stylesheet" type="text/css"/>
 <link href="<?php echo base_url();?>assets/LOGIN.css" media="screen" rel="stylesheet" type="text/css"/>
 </head>
@@ -17,9 +16,9 @@
 <ul>
 <li class="firstmain"><a href="<?php echo site_url('direct/index')?>" target="_self">HOME</a>
 </li>
-<li><a href="<?php echo site_url('direct/login')?>" target="_self">ADMIN</a>
+<li><a href="<?php echo site_url('direct/adminlogin')?>" target="_self">ADMIN</a>
 </li>
-<li><a href="#" target="_self">EVENTS</a>
+<li><a href="<?php echo base_url('mainControl/viewEvent')?>" target="_self">EVENTS</a>
 </li>
 <li><a href="<?php echo site_url('direct/login')?>" target="_self">LOGIN</a>
 </li>
@@ -34,10 +33,11 @@
 
 <div id="wb_Form1" style="position:absolute;left:185px;top:213px;width:529px;height:418px;z-index:9;">
 <form name="LOGIN_FORM" method="post" action="<?php echo base_url('mainControl/login_validation')?>">
+<span style="color:#000000;font-family:Arial;font-size:53px;"><strong>ADMIN LOGIN</strong></span><br/><br/>
 USERNAME:<br/>
 <input type="text" name="username" placeholder="Enter your Username"/><br/><br/>
 Password:<br/>
-<input type="password" name="pwd" placeholder="Enter your Username"/><br/></br>
+<input type="password" name="pwd" placeholder="Enter your Password"/><br/></br>
 <input type="submit" name="Login" value="LOGIN" />
 <!-- <form name="LOGIN_FORM" method="post" action="<?php echo base_url('mainControl/login_validation')?>" enctype="text/plain" id="Form1">
 <div id="wb_Text1" style="position:absolute;left:16px;top:0px;width:472px;height:62px;z-index:0;">
@@ -51,6 +51,7 @@ Password:<br/>
 <!-- <?php
 	echo validation_errors();
 ?> -->
+</form>
 </div>
 <div id="PageFooter1" style="position:absolute;overflow:hidden;text-align:left;left:0px;top:908px;width:100%;height:90px;z-index:10;">
 </div>

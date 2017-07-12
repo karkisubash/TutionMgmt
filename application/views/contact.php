@@ -101,9 +101,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['formid']) && $_POST['f
 <ul>
 <li class="firstmain"><a href="<?php echo site_url('direct/index')?>" target="_self">HOME</a>
 </li>
-<li><a href="<?php echo site_url('direct/login')?>" target="_self">ADMIN</a>
+<li><a href="<?php echo site_url('direct/adminlogin')?>" target="_self">ADMIN</a>
 </li>
-<li><a href="#" target="_self">EVENTS</a>
+<li><a href="<?php echo base_url('mainControl/viewEvent')?>" target="_self">EVENTS</a>
 </li>
 <li><a href="<?php echo site_url('direct/login')?>" target="_self">LOGIN</a>
 </li>

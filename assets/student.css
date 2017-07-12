@@ -104,23 +104,14 @@ body
 #Layer2
 {
    background-color: transparent;
-   background-image: url(images/bgadmin.jpg);
+   background-image: url(images/graduation.jpg);
    background-repeat: no-repeat;
-   background-position: center center;
+   background-position: left center;
    background-attachment: fixed;
    background-position: 50% 0;
    background-size: cover;
 }
-#Image6
-{
-   border: 0px #000000 solid;
-   padding: 0px 0px 0px 0px;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 100%;
-}
-#wb_Text6 
+#wb_Text1 
 {
    background-color: transparent;
    background-image: none;
@@ -129,9 +120,25 @@ body
    margin: 0;
    text-align: left;
 }
-#wb_Text6 div
+#wb_Text1 div
 {
    text-align: left;
+}
+#thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#Button1
+{
+   border: 1px #7CFC00 solid;
+   border-radius: 4px;
+   background-color: #000000;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: bold;
+   font-size: 17px;
 }
 #PageFooter1
 {
