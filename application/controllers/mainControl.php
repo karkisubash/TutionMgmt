@@ -6,23 +6,7 @@ class MainControl extends CI_Controller{
 
 		$this->load->view('main');
 	}
-	public function admit(){
-		$fname=$this->input->post('fname');
-		$lname=$this->input->post('lname');
-		$address=$this->input->post('address');
-		$contact=$this->input->post('contact');
-		$email=$this->input->post('email');
-		$uname=$this->input->post('uname');
-		$pword=md5($this->input->post('pword'));
-		$course=$this->input->post('course_id');
-
-		$this->load->model('mainModel');
-		$this->mainModel->insertStudent($fname,$lname,$address,$contact,$email,$uname,$pword,$course);
-
-		$this->load->view('adminDashboard');
-	}
-
-	public function login_validation(){ //admin login with login validation
+public function login_validation(){ //admin login with login validation
 
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('username','Username','required|alpha');
@@ -35,9 +19,12 @@ class MainControl extends CI_Controller{
 			$password=md5($this->input->post('pwd'));
 			
 			$this->load->model('mainModel');
+			//storing the result from model in $login_id variable
 
 			$login_id=$this->mainModel->valid_login($username,$password);
+
 			If($login_id>=1){
+				//loading session and storing admin id and username in session
 				$this->load->library('session');
 				$this->session->set_userdata('id',$login_id);
 				$this->session->set_userdata('username',$username);
@@ -56,25 +43,95 @@ class MainControl extends CI_Controller{
  			}
  } 
 
+public function signUp(){
+	//getting the user input value from the register form
+		$fname=$this->input->post('fname');
+		$lname=$this->input->post('lname');
+		$address=$this->input->post('address');
+		$contact=$this->input->post('contact');
+		$email=$this->input->post('email');
+		$uname=$this->input->post('uname');
+		$pword=md5($this->input->post('pword'));
+		$course=$this->input->post('course_id');
+
+		$this->load->model('mainModel');
+		//passing the input value to model
+		$this->mainModel->insertStudent($fname,$lname,$address,$contact,$email,$uname,$pword,$course);
+
+		$this->load->view('studentlogin');
+	}
+
+	public function book(){
+	//getting the user input value from the register form
+		$fname=$this->input->post('fname');
+		$lname=$this->input->post('lname');
+		$address=$this->input->post('address');
+		$contact=$this->input->post('contact');
+		$email=$this->input->post('email');
+		$course=$this->input->post('course_id');
+
+		$this->load->model('mainModel');
+		//passing the input value to model
+		$this->mainModel->booking($fname,$lname,$address,$contact,$email,$course);
+
+
+		$this->load->view('main');
+	}
+	public function admit(){
+		//getting the admin input value from the admission form
+		$fname=$this->input->post('fname');
+		$lname=$this->input->post('lname');
+		$address=$this->input->post('address');
+		$contact=$this->input->post('contact');
+		$email=$this->input->post('email');
+		$uname=$this->input->post('uname');
+		$pword=md5($this->input->post('pword'));
+		$course=$this->input->post('course_id');
+		//passing the input value to model
+		$this->load->model('mainModel');
+		$this->mainModel->insertStudent($fname,$lname,$address,$contact,$email,$uname,$pword,$course);
+		//redirecting to admin dashboard
+		$this->load->view('adminDashboard');
+	}
+
+	
+
+ 	public function courseInRegister(){
+ 		//to display courses name in combobox in student register page
+ 		
+			$this->load->model('mainModel');
+			$getMycourse=$this->mainModel->get_course();
+			// print_r($get_course);
+			// exit();
+
+			//stoting the course table value as array in get_course variable
+			$this->load->view('Register',['get_course'=>$getMycourse]);
+		}
+
+
+		public function courseInBook(){
+ 		//to display courses name in combobox in student register page
+ 		
+			$this->load->model('mainModel');
+			$getMycourse=$this->mainModel->get_course();
+			// print_r($get_course);
+			// exit();
+			
+			//stoting the course table value as array in get_course variable
+			$this->load->view('Booking',['get_course'=>$getMycourse]);
+		}
  public function logout()
+ //logging out by removing session data
 		{
 		$this->session->unset_userdata('id');
 	
 		$this->load->view('adminlogin');
 		}
-	// public function logout()
-	// {
-	// 	$this->session->unset_userdata('username');
-	// 	redirect(base_url().'direct/login');
-
-	// }
+	
 
  	public function courseDropDown(){
 
- 	// 		if(!$this->session->userdata('id') ){
-		// 	$this->load->view('adminlogin');
-		
-		// }else{
+ 		//displaying course name in combo box for student admission page
  		
 			$this->load->model('mainModel');
 			$getMycourse=$this->mainModel->get_course();
@@ -85,14 +142,24 @@ class MainControl extends CI_Controller{
  	
 
 	public function viewStudent(){
+		//storing the student table value in array
 		$this->load->model('mainModel');
 		//$student=$this->input->post('sname');
 		$data['arr']=$this->mainModel->retrieveStudent();
 		$this->load->view('student',$data);
 
 	}
+	public function viewBook(){
+		//storing the student table value in array
+		$this->load->model('mainModel');
+		//$student=$this->input->post('sname');
+		$data['arr']=$this->mainModel->retrieveBook();
+		$this->load->view('book',$data);
+
+	}
 
 	public function deleteStudent(){
+		//deleting the value by gettng the id from the view
 		$this->load->model('mainModel');
 		$sid=$this->input->get('id');
 		$this->mainModel->removeStudent($sid);
@@ -101,9 +168,8 @@ class MainControl extends CI_Controller{
 	}
 
 	public function updateDetails(){
-		 // $this->load->model('mainModel');
-		 // $getMycourse=$this->mainModel->get_course();
-
+	
+		//updating student details of the particular student by getting the id from the student view page
 		$this->load->model('mainModel');
 		$sid=$this->input->get('sid');
 		$this->mainModel->selectStudent($sid);
@@ -115,6 +181,7 @@ class MainControl extends CI_Controller{
 	}
 
 	public function studentUpdate(){
+		//getting the value from the user input from the update form
 		$sid=$this->input->post('sid');
 		$fname=$this->input->post('firstname');
 		$lname=$this->input->post('lastname');
@@ -145,12 +212,7 @@ class MainControl extends CI_Controller{
 	}
 
 	public function courseValue(){
-
- 	// 		if(!$this->session->userdata('id') ){
-		// 	$this->load->view('adminlogin');
-		
-		// }else{
- 		
+ 			//to display course in combobox in teacher adding form
 			$this->load->model('mainModel');
 			$getMycourse=$this->mainModel->get_course();
 			// print_r($get_course);
@@ -159,6 +221,7 @@ class MainControl extends CI_Controller{
 		}
 
 	public function teacherAdd(){
+		//adding student from teacher adding form and gettin getting the value inserted by admin
 		$fname=$this->input->post('fname');
 		$lname=$this->input->post('lname');
 		$contact=$this->input->post('contact');
@@ -201,11 +264,8 @@ class MainControl extends CI_Controller{
 
 	public function cmbName(){
 
- 	// 		if(!$this->session->userdata('id') ){
-		// 	$this->load->view('adminlogin');
-		
-		// }else{
- 			
+ 
+ 			//displays teacher and student name in combo box for attendance form
 			$this->load->model('mainModel');
 			$getName=$this->mainModel->get_name();
 			$this->load->model('mainModel');
@@ -219,6 +279,7 @@ class MainControl extends CI_Controller{
 		}
 
 	public function studentAttendance(){
+		//post the attendace of student by gettinhg the admin inserted value
 		$date=$this->input->post('date');
 		$sid=$this->input->post('cmbStudent');
 		$status=$this->input->post('spa');
@@ -267,9 +328,7 @@ class MainControl extends CI_Controller{
 
 			$this->load->model('mainModel');
 			$getName=$this->mainModel->get_name();
-			// print_r($get_course);
-			// exit();
-			//$this->cmbTeacherName();
+	
 			$this->load->model('mainModel');
 			$course=$this->mainModel->get_course();
 			
@@ -293,6 +352,7 @@ class MainControl extends CI_Controller{
 	}
 
 	public function courseAdd(){
+		//adding couser
 		$cname=$this->input->post('cname');
 		$fee=$this->input->post('fee');
 		
@@ -304,11 +364,7 @@ class MainControl extends CI_Controller{
 	}
 
 	public function courseCmb(){
-
- 	// 		if(!$this->session->userdata('id') ){
-		// 	$this->load->view('adminlogin');
-		
-		// }else{
+		//displaying course in combobox in class adding page
  		
 			$this->load->model('mainModel');
 			$course=$this->mainModel->get_course();
@@ -318,6 +374,7 @@ class MainControl extends CI_Controller{
 		}
 
 	public function classAdd(){
+		//adding class time with corresponding course
 		$course=$this->input->post('course_id');
 		$start=$this->input->post('start');
 		$end=$this->input->post('end');
@@ -331,6 +388,7 @@ class MainControl extends CI_Controller{
 	}
 
 	public function saveAccount(){
+		//saving the payment information inserted by admin and generating bill for the same
 		$date=$this->input->post('date');
 		$sid=$this->input->post('cmbStudent');
 		$course=$this->input->post('course_id');
@@ -344,14 +402,6 @@ class MainControl extends CI_Controller{
 		$this->bill();
 	}
 
-//public function cmbStudentCourse(){
-//$this->load->model('mainModel');
-			//$course=$this->mainModel->get_course();
-			// print_r($get_course);
-			// exit();
-			//$this->load->view('account',['get_course'=>$course]);
-
-//}
 
 	public function bill(){
 
@@ -367,9 +417,7 @@ class MainControl extends CI_Controller{
 
 			$this->load->model('mainModel');
 			$getName=$this->mainModel->get_name();
-			// print_r($get_course);
-			// exit();
-			//$this->cmbTeacherName();
+		
 			$this->load->model('mainModel');
 			$course=$this->mainModel->get_course();
 			

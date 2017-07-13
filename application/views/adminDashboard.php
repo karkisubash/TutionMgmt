@@ -26,14 +26,14 @@ $(document).ready(function()
 <div id="Layer1" style="position:relative;text-align:center;width:100%;height:88px;float:left;clear:left;display:block;z-index:10;">
 <div id="Layer1_Container" style="width:970px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_Image1" style="position:absolute;left:26px;top:1px;width:69px;height:87px;z-index:0;">
-<a href="./index.html"><img src="<?php echo base_url('assets/images/LOGO1.png')?>" id="Image1" alt=""></a></div>
+<a href="<?php echo base_url('direct/adminDashboard')?>"><img src="<?php echo base_url('assets/images/LOGO1.png')?>" id="Image1" alt=""></a></div>
 <div id="wb_CssMenu1" style="position:absolute;left:135px;top:25px;width:764px;height:63px;text-align:right;z-index:1;">
 <ul>
 <li class="firstmain"><a href="<?php echo base_url('direct/adminDashboard')?>" target="_self">HOME</a>
 </li>
 <li><a href="<?php echo base_url('mainControl/viewStudent')?>" target="_self">STUDENTS</a>
 </li>
-<li><a href="<?php echo base_url('mainControl/viewTeacher')?>" target="_self">TEACHERS</a>
+<li><a href="<?php echo base_url('mainControl/viewBook')?>" target="_self">BOOKINGS</a>
 </li>
 <li><a href="<?php echo base_url('mainControl/name')?>" target="_self">ACCOUNT</a>
 </li>

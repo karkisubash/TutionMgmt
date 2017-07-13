@@ -2,58 +2,11 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Registration</title>
+<title>Book</title>
 
 <link href="<?php echo base_url();?>assets/TIMS.css" media="screen" rel="stylesheet" type="text/css"/>
 <link href="<?php echo base_url();?>assets/Register.css" media="screen" rel="stylesheet" type="text/css"/>
 </head>
-<script>
-$(document).ready(function()
-{
-   $('#Layer2').parallax();
-});
-
-		function checkpwd(){
-		var password=document.admissionform.pword.value;
-		var rpassword=document.admissionform.rpword.value;
-		
-		if(password===cpassword){
-		
-			document.getElementById('message').innerHTML="password match";
-		}else{
-		
-			document.getElementById('message').innerHTML="password doesn't match";
-		}
-		
-		}
-		
-		function FrmVal1(){
-			var phone = document.admissionform.contact.value;
-			var phoneNum = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-			
-			if(phone.match(phoneNum)){
-				document.getElementById('msz').innerHTML = "valid number";
-				return true;
-			}else{
-				document.getElementById('msz').innerHTML = "Invalid Phone Number";
-			}
-		}
-
-		 function pass() {
-
-          var pword=document.admissionform.pword.value;
-       
-
-          if(pword.length<8){
-		  
- 
-         document.getElementById('pwordMessage').innerHTML='please enter password greater than 8 letter';
-                  
-        }else{
-          document.getElementById('pwordMessage').innerHTML='';
-        }
-    }
-</script>
 <body>
 <div id="Layer1" style="position:relative;text-align:center;width:100%;height:88px;float:left;clear:left;display:block;z-index:25;">
 <div id="Layer1_Container" style="width:970px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
@@ -80,21 +33,15 @@ $(document).ready(function()
 <div>
 <article>
 				<div class="transbox">
-					<h1> Sign Up</h1>
+					<h1> Book</h1>
 					<font color="#77F013" size="+2" face="arial black">
-						<form name="admissionform" action="<?php echo base_url();?>mainControl/signUp" method="post">
+						<form name="admissionform" action="<?php echo base_url();?>mainControl/book" method="post">
 							Firstname:
 							<input type="text" id="fname" name="fname" placeholder="Enter your Firstname"/><br/>
 							Lastname:
 							<input type="text" id="lname" name="lname" placeholder="Enter your Lastname"/><br/>
 							Contact:
 							<input type="text" id="contact" name="contact" placeholder="Enter your Contact"/><br/>
-							username:
-							<input type="text" id="uname" name="uname" placeholder="Enter your username"/><br/>
-							password:
-							<input type="password" id="pword" name="pword" placeholder="Enter your Password"/><br/>
-							Re-enter 
-							<input type="password" id="rpword" name="rpword" placeholder="Re-enter your Password"/><br/>
 							Address:
 							<input type="text" id="address" name="address" placeholder="Enter your Address"/><br/>
 							Email:
@@ -114,7 +61,7 @@ $(document).ready(function()
 								</select>
 								<br/>
 
-							<input type="submit" value="SIGNUP"/><br/><br/>
+							<input type="submit" value="BOOK"/><br/><br/>
 							
 						
 						

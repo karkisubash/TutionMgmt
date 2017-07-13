@@ -23,7 +23,7 @@
 </li>
 <li><a href="<?php echo site_url('direct/login')?>" target="_self">LOGIN</a>
 </li>
-<li><a href="<?php echo site_url('direct/register')?>" target="_self">SIGNUP</a>
+<li><a href="<?php echo site_url('mainControl/courseInRegister')?>" target="_self">SIGNUP</a>
 </li>
 <li><a href="<?php echo site_url('direct/contact')?>" target="_self">CONTACT</a>
 </li>

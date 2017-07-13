@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['formid']) && $_POST['f
 <div id="Layer1" style="position:relative;text-align:center;width:100%;height:88px;float:left;clear:left;display:block;z-index:13;">
 <div id="Layer1_Container" style="width:970px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_Image1" style="position:absolute;left:26px;top:1px;width:69px;height:87px;z-index:0;">
-<a href="./index.html"><img src="images/LOGO1.png" id="Image1" alt=""></a></div>
+<a href="<?php echo base_url('direct/index');?>"><img src="<?php echo base_url('assets/images/LOGO1.png');?>" id="Image1" alt=""></a></div>
 <div id="wb_CssMenu1" style="position:absolute;left:135px;top:25px;width:764px;height:63px;text-align:right;z-index:1;">
 <ul>
 <li class="firstmain"><a href="<?php echo site_url('direct/index')?>" target="_self">HOME</a>

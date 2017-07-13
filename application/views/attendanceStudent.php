@@ -10,7 +10,7 @@ redirect('direct/studentlogin');
 <html>
 <head>
 <meta charset="utf-8">
-<title>Teacher</title>
+<title>Student Attendance</title>
 <link href="<?php echo base_url('assets/TIMS.css')?>" rel="stylesheet">
 <link href="<?php echo base_url('assets/teacher.css')?>" rel="stylesheet">
 <script src="jquery-1.12.4.min.js"></script>
@@ -26,16 +26,12 @@ $(document).ready(function()
 <div id="Layer1" style="position:relative;text-align:center;width:100%;height:88px;float:left;clear:left;display:block;z-index:7;">
 <div id="Layer1_Container" style="width:970px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_Image1" style="position:absolute;left:26px;top:1px;width:69px;height:87px;z-index:0;">
-<a href="<?php echo base_url('direct/adminDashboard')?>"><img src="<?php echo base_url('assets/images/LOGO1.png')?>" id="Image1" alt=""></a></div>
+<a href="<?php echo base_url('direct/studentdashboard')?>"><img src="<?php echo base_url('assets/images/LOGO1.png')?>" id="Image1" alt=""></a></div>
 <div id="wb_CssMenu1" style="position:absolute;left:135px;top:25px;width:764px;height:63px;text-align:right;z-index:1;">
 <ul>
 <li class="firstmain"><a href="<?php echo base_url('direct/studentdashboard')?>" target="_self">HOME</a>
 </li>
 <li><a href="<?php echo base_url('studentFunctions/attendance')?>" target="_self">ATTENDANCE</a>
-</li>
-<li><a href="<?php echo base_url('mainControl/viewEvents')?>" target="_self">EVENTS</a>
-</li>
-<li><a href="<?php echo base_url('direct/contact')?>" target="_self">CONTACT</a>
 </li>
 <li><a href="<?php echo base_url('studentFunctions/logout')?>" target="_self">LOGOUT</a>
 </li>

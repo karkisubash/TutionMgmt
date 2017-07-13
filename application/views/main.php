@@ -24,15 +24,15 @@ $(document).ready(function()
 <ul>
 <li class="firstmain"><a href="<?php echo site_url('direct/index')?>" target="_self">HOME</a>
 </li>
-<li><a href="<?php echo site_url('direct/adminlogin')?>" target="_self">ADMIN</a>
-</li>
 <li><a href="<?php echo base_url('mainControl/viewEvent')?>" target="_self">EVENTS</a>
 </li>
 <li><a href="<?php echo site_url('direct/login')?>" target="_self">LOGIN</a>
 </li>
-<li><a href="<?php echo site_url('direct/register')?>" target="_self">SIGNUP</a>
+<li><a href="<?php echo site_url('mainControl/courseInRegister')?>" target="_self">SIGNUP</a>
 </li>
 <li><a href="<?php echo site_url('direct/contact')?>" target="_self">CONTACT</a>
+</li>
+<li><a href="<?php echo base_url();?>assets/userguide.pdf" target="_self"><img src="<?php echo base_url('assets/images/help.png')?>"></a>
 </li>
 </ul>
 </div>
@@ -51,11 +51,11 @@ $(document).ready(function()
 
 <div id="Layer2" style="position:absolute;text-align:left;left:330px;top:683px;width:260px;height:267px;z-index:11;">
 <div id="wb_Text3" style="position:absolute;left:45px;top:53px;width:170px;height:189px;text-align:center;z-index:4;">
-<span style="color:#000000;font-family:'Comic Sans MS';font-size:19px;"><strong>Prepare yourself for the best with our standardized course contents, ultimately helping you to maximize test result.</strong></span></div>
+<span style="color:#000000;font-family:'Comic Sans MS';font-size:19px;"><strong>Book a course by providing your personal details</strong></span></div>
 </div>
 <div id="wb_ClipArt2" style="position:absolute;left:412px;top:634px;width:98px;height:72px;z-index:12;">
 
-<a href=""><img class="hover" src="<?php echo base_url('assets/images/img0003_hover.png');?>" alt="" style="border-width:0;width:98px;height:72px;"><span><img src="<?php echo base_url('assets/images/img0003.png');?>" id="ClipArt2" alt="" style="width:98px;height:72px;"></span></a></div>
+<a href="<?php echo base_url('mainControl/courseInBook')?>"><img class="hover" src="<?php echo base_url('assets/images/img0003_hover.png');?>" alt="" style="border-width:0;width:98px;height:72px;"><span><img src="<?php echo base_url('assets/images/img0003.png');?>" id="ClipArt2" alt="" style="width:98px;height:72px;"></span></a></div>
 
 <div id="Layer4" style="position:absolute;text-align:left;left:645px;top:681px;width:254px;height:271px;z-index:13;">
 <div id="wb_Text4" style="position:absolute;left:42px;top:55px;width:170px;height:135px;text-align:center;z-index:5;">
@@ -64,7 +64,7 @@ $(document).ready(function()
 </div>
 
 <div id="wb_ClipArt3" style="position:absolute;left:739px;top:634px;width:86px;height:72px;z-index:14;">
-<a href=""><img class="hover" src="<?php echo base_url('assets/images/img0004_hover.png');?>" alt="" style="border-width:0;width:86px;height:72px;"><span><img src="<?php echo base_url('assets/images/img0004.png');?>" id="ClipArt3" alt="" style="width:86px;height:72px;"></span></a></div>
+<a href="<?php echo base_url('mainControl/viewEvent')?>"><img class="hover" src="<?php echo base_url('assets/images/img0004_hover.png');?>" alt="" style="border-width:0;width:86px;height:72px;"><span><img src="<?php echo base_url('assets/images/img0004.png');?>" id="ClipArt3" alt="" style="width:86px;height:72px;"></span></a></div>
 <div id="wb_Text6" style="position:absolute;left:101px;top:1062px;width:525px;height:2px;z-index:15;">
 &nbsp;</div>
 </div>

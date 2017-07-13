@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Teacher</title>
+<title>Bookings</title>
 <link href="<?php echo base_url('assets/TIMS.css')?>" rel="stylesheet">
 <link href="<?php echo base_url('assets/teacher.css')?>" rel="stylesheet">
 <script src="jquery-1.12.4.min.js"></script>
@@ -44,7 +44,7 @@ $(document).ready(function()
 </div>
 
 <div>
-<form action="<?php echo base_url();?>mainControl/viewTeacher" class="Details" method="post">
+<form action="<?php echo base_url();?>mainControl/viewBook" class="Details" method="post">
 <!-- Student Name:   <input type="text" id="name" name="sname" placeholder="Enter Student Name"/>
 <input type="submit" value="VIEW"/>
 </form> -->
@@ -55,10 +55,10 @@ $(document).ready(function()
 <thead style="background-color: #4CAF50;color: white;padding: 15px;text-align: left;">
 	<th>First Name</th>
 	<th>Last Name</th>
-	<th>Phone number</th>
-	<th>User Name</th>
-	<th>Action</th>
-	<th>Action</th>
+	<th>Contact</th>
+	<th>Address</th>
+	<th>Email</th>
+	<th>Course</th>
 </thead>
 <tbody>
 <?php
@@ -67,10 +67,10 @@ $(document).ready(function()
 	<tr style="height: 30px;vertical-align: bottom;padding: 15px;text-align: left;">
 		<td><?=$row->firstname?></td>
 		<td><?=$row->lastname?></td>
-		<td><?=$row->phnNumber?></td>
-		<td><?=$row->username?></td>
-		<td><a onclick="return confirm('Are you sure you want to delete the data?')" href="<?php echo base_url();?>mainControl/deleteTeacher?id=<?php echo $row->tid; ?>">DELETE</a></td>
-		<td><a href="<?php echo base_url();?>mainControl/updateTeacherDetail?tid=<?php echo $row->tid; ?>">EDIT</a></td>
+		<td><?=$row->contact?></td>
+		<td><?=$row->address?></td>
+		<td><?=$row->email?></td>
+		<td><?=$row->coourse_id?></td>
 	</tr>
 <?php
 	endforeach;
@@ -78,7 +78,6 @@ $(document).ready(function()
 </tbody>
 </center>
 </div>
-<a href="<?php echo base_url('mainControl/courseValue')?>" style="position:absolute;left:372px;top:500px;width:184px;height:62px;z-index:14;">ADD</button></a>
 
 <!-- <a href="<?php echo base_url('direct/addteacher')?>"><input type="submit" id="Button1" name="add" value="ADD NEW TEACHERS" style="position:absolute;left:499px;top:146px;width:178px;height:49px;z-index:4;"></a> -->
 <a href="<?php echo base_url('direct/adminDashboard')?>"><img src="<?php echo base_url('assets/images/img0019.png')?>" id="MergedObject10" alt="" title="" style="border-width:0;position:absolute;left:695px;top:409px;width:170px;height:45px;z-index:5"></a>

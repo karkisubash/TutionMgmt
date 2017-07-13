@@ -1,21 +1,14 @@
 <?php
 
 class teacherActivity extends CI_Controller{
-	public function teacher_login(){
-
-		// $this->load->library('form_validation');
-		// $this->form_validation->set_rules('uname','Uname','required|alpha');
-		// $this->form_validation->set_rules('pword','Pword','required');
-		// $this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
-		// if($this->form_validation->run()==true)
-		// {
+	public function teacher_login(){//teacher login
 			
 			$username=$this->input->post('username');
-			$password=md5($this->input->post('pwd'));
+			$password=md5($this->input->post('pwd'));//gettng value from login form of teacher
 			
 			$this->load->model('teacherModel');
 
-			$log_id=$this->teacherModel->login_valid($username,$password);
+			$log_id=$this->teacherModel->login_valid($username,$password);//storing the result from model in $login_id variable
 			If($log_id>=1){
 				$this->load->library('session');
 				$this->session->set_userdata('sess_id',$log_id);
@@ -32,14 +25,14 @@ class teacherActivity extends CI_Controller{
  		// 	}
 
 }
-		 public function logout()
+		 public function logout() //logging out by removing session data
 		{
 		$this->session->unset_userdata('sess_id');
 	
 		$this->load->view('teacherlogin');
 		}
 
-		public function showTeacher(){
+		public function showTeacher(){//display the teacher detail from the session stored while logged in
 			$session=$this->session->userdata('sess_id');
 		if ($session!=''){
 			$this->load->model('teacherModel');
@@ -51,7 +44,7 @@ class teacherActivity extends CI_Controller{
 		}
 	}
 
-		public function teacherModify(){
+		public function teacherModify(){//update data by user input
 		$tid=$this->input->post('tid');
 		$fname=$this->input->post('firstname');
 		$lname=$this->input->post('lastname');
@@ -90,32 +83,32 @@ class teacherActivity extends CI_Controller{
 
 	}	
 
-		public function upload(){
+		//public function upload(){
 			//uploading image
-		$config['upload_path']="assets/images/";
-		 $config['allowed_types'] = 'txt|pdf|docx';
-            $config['max_size'] = '1000';
+		//$config['upload_path']="assets/images/";
+		// $config['allowed_types'] = 'txt|pdf|docx';
+           // $config['max_size'] = '1000';
             //$config['max_width']  = '1024';
             //$config['max_height']  = '768';
 
 		
-		$this->load->library('upload',$config);
-		$this->upload->initialize($config);
+		//$this->load->library('upload',$config);
+		//$this->upload->initialize($config);
 		
 		//$this->upload->do_upload('userfile');
 		
-		$data=array('upload_data'=>$this->upload->data());
+		//$data=array('upload_data'=>$this->upload->data());
 
-		$file=$data['upload_data']['userfile'];
-		echo $file;
-		$name=$this->input->post('name');
+		//$file=$data['upload_data']['file_name'];
+		//echo $file;
+		//$name=$this->input->post('name');
 
-		$this->load->model('teacherModel');
-		$this->teacherModel->uploadFile($file,$name);
+		//$this->load->model('teacherModel');
+		//$this->teacherModel->uploadFile($file,$name);
 		
 		//$data['uploadmsg']="file uploaded";
-		$this->load->view('upload');
-		}
+		//$this->load->view('upload');
+		//}
 } 
 
 ?>

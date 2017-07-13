@@ -15,7 +15,7 @@
 </div>
 <table style="position:absolute;left:0px;top:216px;width:1350px;height:125px;z-index:9;" id="Table1">
 <tr>
-<td class="cell0"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"><?php echo "Name <h1>".$_POST['cmbStudent']."</h1></br>";?>
+<td class="cell0"><span style="color:#000000;font-family:Arial;font-size:13px;line-height:16px;"><?php echo "<br><br>Name <h1>".$_POST['cmbStudent']."</h1></br>";?>
 	 </span></td>
 </tr>
 </table>

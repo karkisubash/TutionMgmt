@@ -1,28 +1,7 @@
 <?php
 class MainModel extends CI_Model{	
-
-	public function insertStudent($fname,$lname,$address,$contact,$email,$uname,$pword,$course){
-		$arr=array(
-			'firstname'=>$fname,
-			'lastname'=>$lname,
-			'contact'=>$contact,
-			'username'=>$uname,
-			'password'=>$pword,
-			'address'=>$address,
-			'email'=>$email,
-			'course_id'=>$course
-			);
-		$this->db->insert('tbl_student',$arr);
-
-	}
-
-	// public function retrive($id){
-	// $this->db->where('id',$id);
-	// $this->db->get('tblregister');
-	// return $this->db->get('tblregister');
-	// }
-
-	public function valid_login($username,$password)
+		public function valid_login($username,$password)
+	//checking the login information in tbl_admin
 	{
 		
 		$this->db->where('username', $username);
@@ -40,7 +19,43 @@ class MainModel extends CI_Model{
 
 	} 
 
+	public function insertStudent($fname,$lname,$address,$contact,$email,$uname,$pword,$course){
+		//iserting the values in database
+		$arr=array(
+			'firstname'=>$fname,
+			'lastname'=>$lname,
+			'contact'=>$contact,
+			'username'=>$uname,
+			'password'=>$pword,
+			'address'=>$address,
+			'email'=>$email,
+			'course_id'=>$course
+			);
+		$this->db->insert('tbl_student',$arr);
+		//INSERT into tbl_student values $fname,$lname,$contact,$uname,$pword,$address,$email,$course;
+
+	}
+
+	public function booking($fname,$lname,$address,$contact,$email,$course){
+		//iserting the values in database
+		$arr=array(
+			'firstname'=>$fname,
+			'lastname'=>$lname,
+			'contact'=>$contact,
+			'address'=>$address,
+			'email'=>$email,
+			'coourse_id'=>$course
+			);
+		$this->db->insert('tbl_book
+			',$arr);
+		//INSERT into tbl_student values $fname,$lname,$contact,$uname,$pword,$address,$email,$course;
+
+	}
+
+
+
 	public function get_course(){
+		//getting value from tbl_course
 		$query=$this->db->get('tbl_course');
 		if($query ->num_rows()>0){
 			return $query->result();
@@ -51,11 +66,11 @@ class MainModel extends CI_Model{
 		$this->db->where("sid",$sid);
 		$query=$this->db->get('tbl_student');
 		return $query;
-
+		//Select * from tbl_student where sid='$sid';
 	}
 
 	public function updateStudentDetail($sid,$fname,$lname,$contact,$address,$email,$course){
-		
+		//storing the passed parameters in array
 		$arr=array(
 			'firstname'=>$fname,
 			'lastname'=>$lname,
@@ -67,6 +82,7 @@ class MainModel extends CI_Model{
 
 		$this->db->where("sid",$sid);
 		$this->db->update('tbl_student',$arr);
+		//Update from tbl_student(firstname,lastname,contact,address,email,course_id) values ('$fname','$lname','$contact','$address','$email','$course') where sid='$sid';
 		// return "Successfully Updated";
 	}
 
@@ -77,21 +93,32 @@ class MainModel extends CI_Model{
 
 	}
 
+	public function retrieveBook(){
+		//$this->db->where("firstname",$student);
+		$query=$this->db->get('tbl_book');
+		return $query->result();
+
+	}
+
 	public function removeStudent($sid){
+
 		$this->db->where("sid",$sid);
 		$this->db->delete("tbl_student");
+		//delete from tbl_student where sid='$sid';
 	}
 
 	public function retrieveTeacher(){
 		//$this->db->where("firstname",$student);
 		$query=$this->db->get('tbl_teacher');
 		return $query->result();
+		//select * from tbl_teacher;
 
 	}
 
 	public function removeTeacher($tid){
 		$this->db->where("tid",$tid);
 		$this->db->delete("tbl_teacher");
+		//delete from tbl_student where tid='$tid';
 	}
 
 	
@@ -109,12 +136,14 @@ class MainModel extends CI_Model{
 			);
 		$this->db->insert('tbl_teacher',$data);
 
+		//INSERT into tbl_teacher values ($fname,$lname,$contact,$uname,$pword,$course);
 	}
 
 	public function selectTeacher($tid){
 		$this->db->where("tid",$tid);
 		$query=$this->db->get('tbl_teacher');
 		return $query;
+		//select *from tbl_teacher where tis='$tis';
 
 	}
 
@@ -136,6 +165,7 @@ class MainModel extends CI_Model{
 		$query=$this->db->get('tbl_student');
 		if($query->num_rows()>0){
 			return $query->result();
+			//select * from tbl_student;
 		}
 	}
 
@@ -146,6 +176,7 @@ class MainModel extends CI_Model{
 			'status'=>$status
 			);
 		$this->db->insert('tbl_attendance',$data);
+		//INSERT into tbl_attendance values $date,$sid,$status;
 	}
 
 	public function attendanceTeacher($tdate,$tid,$tstatus){
@@ -155,6 +186,7 @@ class MainModel extends CI_Model{
 			'status'=>$tstatus
 			);
 		$this->db->insert('tbl_attendance',$arr);
+		//INSERT into tbl_attendance values $date,$tid,$status;
 	}
 
 	public function getTeachername(){
@@ -178,10 +210,6 @@ class MainModel extends CI_Model{
 	}
 
 	public function retrieveCourse(){
-		//$this->db->where("firstname",$student);
-		// $query=$this->db->get('tbl_course');
-		// return $query->result();
-
 
 		$this->db->select ( '*' ); 
 	    $this->db->from ( 'tbl_course');

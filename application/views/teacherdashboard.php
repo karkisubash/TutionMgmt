@@ -33,10 +33,6 @@ $(document).ready(function()
 </li>
 <li><a href="<?php echo base_url('teacherActivity/showTeacher')?>" target="_self">ATTENDANCE</a>
 </li>
-<li><a href="<?php echo base_url('mainControl/viewEvents')?>" target="_self">EVENTS</a>
-</li>
-<li><a href="#" target="_self">UPLOAD</a>
-</li>
 <li><a href="<?php echo base_url('teacherActivity/logout')?>" target="_self">LOGOUT</a>
 </li>
 </ul>
