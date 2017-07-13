@@ -65,6 +65,7 @@ $(document).ready(function()
 	foreach($arr as $row):
 ?>
 	<tr style="height: 30px;vertical-align: bottom;padding: 15px;text-align: left;">
+		<!--value of database table stored in the table-->
 		<td><?=$row->firstname?></td>
 		<td><?=$row->lastname?></td>
 		<td><?=$row->contact?></td>

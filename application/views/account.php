@@ -18,16 +18,8 @@ $(document).ready(function()
    $("#jQueryButton3").button({ icon: 'ui-icon-caret-1-n', iconPosition: 'beginning' });
 });
 </script>
-<script>
-var myWindow;
 
-function openWin() {
-    myWindow = window.open("bill", "bill", "width=200,height=100");
-    //myWindow.document.write("<p>INVOICE</p>");
 
-}
-
-</script>
 </head>
 <body>
 <div id="Layer1" style="position:relative;text-align:center;width:100%;height:88px;float:left;clear:left;display:block;z-index:18;">
@@ -62,6 +54,7 @@ function openWin() {
 <label for="" id="Label2" style="position:absolute;left:0px;top:220px;width:180px;height:46px;line-height:46px;z-index:3;">SELECT STUDENT</label>
 <select id="cmbStudent" name="cmbStudent" onchange="fetch_select(this.value);" style="position:absolute;left:214px;top:220px;width:195px;height:59px;z-index:4;">
 <option value="">Select Name</option>
+	<!--firstname of the student value displayed n combobox -->
 								<?php if(count($getname)):?>
 							 		<?php foreach($getname as $name):?>
 							 			<option value="<?php echo $name->firstname;?>"><?php echo $name->firstname;?> 
